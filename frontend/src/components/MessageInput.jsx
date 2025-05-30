@@ -15,6 +15,7 @@ const MessageInput = () => {
       toast.error("Please select an image file");
       return;
     }
+
     const reader = new FileReader();
     reader.onloadend = () => {
       setImagePreview(reader.result);
@@ -57,7 +58,7 @@ const MessageInput = () => {
             />
             <button
               onClick={removeImage}
-              className="absolute -top1.5 -right-1.5 h-5 rounded-full bg-base-300 flex items-center justify-center"
+              className="absolute -top-1.5 -right-1.5 h-5 rounded-full bg-base-300 flex items-center justify-center"
               type="button"
             >
               <X className="size-3" />
