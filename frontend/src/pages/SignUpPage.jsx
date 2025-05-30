@@ -20,10 +20,9 @@ const SignUpPage = () => {
     email: "",
     password: "",
   });
-
   const { signup, isSigningUp } = useAuthStore();
 
-  const validdateForm = () => {
+  const validateForm = () => {
     if (!formData.fullName.trim()) return toast.error("Full name is required");
     if (!formData.email.trim()) return toast.error("Email is required");
     if (!/\S+@\S+\.\S+/.test(formData.email))
@@ -37,8 +36,7 @@ const SignUpPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const success = validdateForm();
-
+    const success = validateForm();
     if (success === true) signup(formData);
   };
 
